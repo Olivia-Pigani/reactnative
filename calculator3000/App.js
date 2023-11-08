@@ -4,22 +4,22 @@ import Bouton from './components/Bouton';
 
 export default function App() {
   const [textToCalculate, setTextToCalculate] = useState('');
-  const [showZero, setShowZero] = useState("0")
+  const [showZero, setShowZero] = useState('0');
 
   const handleDataPicker = value => {
     console.log('app handleDataPicker :', value);
-    setShowZero("")
+    setShowZero('');
     if (value == 'AC') {
       setTextToCalculate('');
-      setShowZero("0")
+      setShowZero('0');
     } else if (value == 'Del') {
       setTextToCalculate(textToCalculate.slice(0, -1));
     } else if (value == '=') {
       console.log(textToCalculate);
-      
+
       setTextToCalculate(String(eval(textToCalculate)));
     } else {
-      setTextToCalculate((prevState) => prevState+ value);
+      setTextToCalculate(prevState => prevState + value);
     }
     console.log(textToCalculate);
   };
@@ -31,40 +31,79 @@ export default function App() {
       </View>
 
       <View style={styles.wannabeGrid}>
-        <Text style={styles.calculatorOutput}>{textToCalculate}{showZero}</Text>
+        <Text style={styles.calculatorOutput}>
+          {textToCalculate}
+          {showZero}
+        </Text>
 
         <View style={styles.rowStyle}>
-          <Bouton value={'AC'} onPress={handleDataPicker} ></Bouton>
+          <Bouton value={'AC'} onPress={handleDataPicker}></Bouton>
           <Bouton value={'^'} onPress={handleDataPicker}></Bouton>
           <Bouton value={'%'} onPress={handleDataPicker}></Bouton>
           <Bouton value={'/'} onPress={handleDataPicker}></Bouton>
         </View>
 
         <View style={styles.rowStyle}>
-          <Bouton value={'7'} onPress={handleDataPicker} isWhite={true}></Bouton>
-          <Bouton value={'8'} onPress={handleDataPicker}isWhite={true}></Bouton>
-          <Bouton value={'9'} onPress={handleDataPicker}isWhite={true}></Bouton>
+          <Bouton
+            value={'7'}
+            onPress={handleDataPicker}
+            isWhite={true}></Bouton>
+          <Bouton
+            value={'8'}
+            onPress={handleDataPicker}
+            isWhite={true}></Bouton>
+          <Bouton
+            value={'9'}
+            onPress={handleDataPicker}
+            isWhite={true}></Bouton>
           <Bouton value={'*'} onPress={handleDataPicker}></Bouton>
         </View>
 
         <View style={styles.rowStyle}>
-          <Bouton value={'4'} onPress={handleDataPicker}isWhite={true}></Bouton>
-          <Bouton value={'5'} onPress={handleDataPicker}isWhite={true}></Bouton>
-          <Bouton value={'6'} onPress={handleDataPicker}isWhite={true}></Bouton>
+          <Bouton
+            value={'4'}
+            onPress={handleDataPicker}
+            isWhite={true}></Bouton>
+          <Bouton
+            value={'5'}
+            onPress={handleDataPicker}
+            isWhite={true}></Bouton>
+          <Bouton
+            value={'6'}
+            onPress={handleDataPicker}
+            isWhite={true}></Bouton>
           <Bouton value={'-'} onPress={handleDataPicker}></Bouton>
         </View>
 
         <View style={styles.rowStyle}>
-          <Bouton value={'1'} onPress={handleDataPicker}isWhite={true}></Bouton>
-          <Bouton value={'2'} onPress={handleDataPicker}isWhite={true}></Bouton>
-          <Bouton value={'3'} onPress={handleDataPicker}isWhite={true}></Bouton>
+          <Bouton
+            value={'1'}
+            onPress={handleDataPicker}
+            isWhite={true}></Bouton>
+          <Bouton
+            value={'2'}
+            onPress={handleDataPicker}
+            isWhite={true}></Bouton>
+          <Bouton
+            value={'3'}
+            onPress={handleDataPicker}
+            isWhite={true}></Bouton>
           <Bouton value={'+'} onPress={handleDataPicker}></Bouton>
         </View>
 
         <View style={styles.rowStyle}>
-          <Bouton value={'.'} onPress={handleDataPicker}isWhite={true}></Bouton>
-          <Bouton value={'0'} onPress={handleDataPicker}isWhite={true}></Bouton>
-          <Bouton value={'Del'} onPress={handleDataPicker}isWhite={true}></Bouton>
+          <Bouton
+            value={'.'}
+            onPress={handleDataPicker}
+            isWhite={true}></Bouton>
+          <Bouton
+            value={'0'}
+            onPress={handleDataPicker}
+            isWhite={true}></Bouton>
+          <Bouton
+            value={'Del'}
+            onPress={handleDataPicker}
+            isWhite={true}></Bouton>
           <Bouton value={'='} onPress={handleDataPicker}></Bouton>
         </View>
       </View>
