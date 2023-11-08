@@ -1,21 +1,21 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 
-export default function Bouton(props) {
+export default function Bouton({isGrey,isWhite,value,onPress}) {
 
 
 const handlePress = () => {
-    console.log("boutton handleDataPicker :" ,props.value);
-    if (props.onPress) {
-        props.onPress(props.value);
+    console.log("boutton handleDataPicker :" ,value);
+    if (onPress) {
+        onPress(value);
       }
 }
 
 
   return (
-    <View style={styles.aBouton}>
-        <Pressable onPress={handlePress}>
-      <Text style={styles.boutonCalc}>{props.value}</Text>
+    <View  style={isWhite ? [styles.aBouton,styles.isWhite] :  [styles.aBouton,styles.isGrey]}>
+        <Pressable onPress={handlePress} style={({pressed})=>pressed && styles.pressedItem}>
+      <Text style={styles.boutonCalc}>{value}</Text>
       </Pressable>
     </View>
   )
@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
 
 
     boutonCalc : {
-        backgroundColor:"white",
         color:"black",
         width:80, 
         minHeight: 80, 
@@ -33,9 +32,19 @@ const styles = StyleSheet.create({
         padding: 10, 
         borderRadius: 20, 
         textAlign:"center",
+        fontSize:30
     },
     aBouton:{
        margin:2,
+    },
+    isGrey:{
+      backgroundColor:"grey",
+    },
+    isWhite:{
+      backgroundColor:"white"
+    },
+    pressedItem:{
+      backgroundColor:"yellow",
     }
  
 })

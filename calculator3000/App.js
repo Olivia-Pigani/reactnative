@@ -32,38 +32,38 @@ export default function App() {
         <Text style={styles.calculatorOutput}>{textToCalculate}</Text>
 
         <View style={styles.rowStyle}>
-          <Bouton value={'AC'} onPress={handleDataPicker}></Bouton>
-          <Bouton value={'^'} onPress={handleDataPicker}></Bouton>
-          <Bouton value={'%'} onPress={handleDataPicker}></Bouton>
-          <Bouton value={'/'} onPress={handleDataPicker}></Bouton>
+          <Bouton value={'AC'} onPress={handleDataPicker} isWhite={true}></Bouton>
+          <Bouton value={'^'} onPress={handleDataPicker}isWhite={true}></Bouton>
+          <Bouton value={'%'} onPress={handleDataPicker}isWhite={true}></Bouton>
+          <Bouton value={'/'} onPress={handleDataPicker}isWhite={true}></Bouton>
         </View>
 
         <View style={styles.rowStyle}>
           <Bouton value={'7'} onPress={handleDataPicker}></Bouton>
           <Bouton value={'8'} onPress={handleDataPicker}></Bouton>
           <Bouton value={'9'} onPress={handleDataPicker}></Bouton>
-          <Bouton value={'*'} onPress={handleDataPicker}></Bouton>
+          <Bouton value={'*'} onPress={handleDataPicker}isWhite={true}></Bouton>
         </View>
 
         <View style={styles.rowStyle}>
           <Bouton value={'4'} onPress={handleDataPicker}></Bouton>
           <Bouton value={'5'} onPress={handleDataPicker}></Bouton>
           <Bouton value={'6'} onPress={handleDataPicker}></Bouton>
-          <Bouton value={'-'} onPress={handleDataPicker}></Bouton>
+          <Bouton value={'-'} onPress={handleDataPicker}isWhite={true}></Bouton>
         </View>
 
         <View style={styles.rowStyle}>
           <Bouton value={'1'} onPress={handleDataPicker}></Bouton>
           <Bouton value={'2'} onPress={handleDataPicker}></Bouton>
           <Bouton value={'3'} onPress={handleDataPicker}></Bouton>
-          <Bouton value={'+'} onPress={handleDataPicker}></Bouton>
+          <Bouton value={'+'} onPress={handleDataPicker}isWhite={true}></Bouton>
         </View>
 
         <View style={styles.rowStyle}>
           <Bouton value={'.'} onPress={handleDataPicker}></Bouton>
           <Bouton value={'0'} onPress={handleDataPicker}></Bouton>
           <Bouton value={'Del'} onPress={handleDataPicker}></Bouton>
-          <Bouton value={'='} onPress={handleDataPicker}></Bouton>
+          <Bouton value={'='} onPress={handleDataPicker}isWhite={true}></Bouton>
         </View>
       </View>
     </View>
