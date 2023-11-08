@@ -4,12 +4,14 @@ import Bouton from './components/Bouton';
 
 export default function App() {
   const [textToCalculate, setTextToCalculate] = useState('');
+  const [showZero, setShowZero] = useState("0")
 
   const handleDataPicker = value => {
     console.log('app handleDataPicker :', value);
-
+    setShowZero("")
     if (value == 'AC') {
       setTextToCalculate('');
+      setShowZero("0")
     } else if (value == 'Del') {
       setTextToCalculate(textToCalculate.slice(0, -1));
     } else if (value == '=') {
@@ -29,7 +31,7 @@ export default function App() {
       </View>
 
       <View style={styles.wannabeGrid}>
-        <Text style={styles.calculatorOutput}>{textToCalculate}</Text>
+        <Text style={styles.calculatorOutput}>{textToCalculate}{showZero}</Text>
 
         <View style={styles.rowStyle}>
           <Bouton value={'AC'} onPress={handleDataPicker} ></Bouton>
