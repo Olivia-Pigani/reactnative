@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
       backgroundColor:"grey",
     },
     isWhite:{
-      backgroundColor:"white"
+      backgroundColor:"white",
+      borderRadius:50
     },
     pressedItem:{
       backgroundColor:"yellow",
