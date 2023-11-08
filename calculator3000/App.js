@@ -3,22 +3,24 @@ import React, {useState} from 'react';
 import Bouton from './components/Bouton';
 
 export default function App() {
-  const [textToCalculate, setTextToCalculate] = useState([]);
+  const [textToCalculate, setTextToCalculate] = useState('');
 
   const handleDataPicker = value => {
     console.log('app handleDataPicker :', value);
 
     if (value == 'AC') {
       setTextToCalculate('');
-    } else if (value == 'Del'){
-        if(textToCalculate >=0 ){
-        setTextToCalculate(textToCalculate.pop())
+    } else if (value == 'Del') {
+      setTextToCalculate(textToCalculate.slice(0, -1));
+    } else if (value == '=') {
+      console.log(textToCalculate);
+      
+      setTextToCalculate(String(eval(textToCalculate)));
     } else {
-        setTextToCalculate(prevState=>[...prevState+value])
+      setTextToCalculate((prevState) => prevState+ value);
     }
     console.log(textToCalculate);
   };
-
 
   return (
     <View style={styles.fullCalculator}>
